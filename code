@@ -1,0 +1,23 @@
+print("Name = ANVI BANSAL \nPROJECT TITLE = GUESS THE NUMBER\n")
+print("PROGRAM IMPLEMENTATION :\n programme keeps running until the user gussess correctly\n")
+#Define the number which will be the correct guess
+num = 13
+#start the guess and code for input
+def make_guess():
+        guess = int(input("make a guess in range of 1-20 : ")) #3cases
+        if(guess == num):#case1 = directly guessed, the correct one
+                print("Congratulations! You guessed correctly")
+        elif(guess >= 21 or guess <= 0): #case2 = When the guessed number is put out of the range
+                print("Please choose in range of 1-20")
+                make_guess()#It runs the entire function again, allowing to guess again
+        elif(guess != num or guess >= 1 or guess <= 20): #case3 = When the number is guessed in the range, but is not correct
+                #Further distributed into two cases, showing whether the number is high or low
+                if(guess >= 14):
+                        print("Oops! incorrect guess \ntry again")
+                        print("guess is high")
+                        make_guess()#It runs the entire function Again
+                elif(guess <= 12):
+                        print("Oops! incorrect guess \ntry again")
+                        print("guess is low")
+                        make_guess()#It runs the entire function again
+make_guess()# indicates the start of the function
